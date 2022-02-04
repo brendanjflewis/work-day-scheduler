@@ -12,27 +12,28 @@ $(document).ready(function() {
         console.log(this);
 
         localStorage.setItem(time, plan);
-    })
+    });
 
-    function hourTracker() {
+    
+    function timeBlockColor() {
         var currentTime = moment().hour();
         
         timeBlock = $(".time-block").each(function () {
-            var hour = parseInt($(this).attr("id"));
+            var hour = ($(this).attr("id"));
 
 
             if (currentTime > hour) {
                 $(this).addClass("past");
             } else if (currentTime === hour) {
-                $(this).addClass("present");
+                $(this).addClass("present");  
             } else {
-                $(this).addClass("fuuuuutuuurrrre");
+                $(this).addClass("future");
             }
 
             console.log(this);
         })
-    }
-    hourTracker();
+    };
+    timeBlockColor();
 })
 // $(document).ready(function() {
 //     var currentDate = momenent().format('MMM Do YY');
